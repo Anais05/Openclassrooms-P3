@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+
+        <meta property="og:title" content="Velib'" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://projet3-velib.anais-assamoi.fr/" />
+        <meta property="og:image" content="http://projet3-velib.anais-assamoi.fr/p3-image/velib-logo.png" />
+
+        <link rel="stylesheet" type="text/css" href="stylesheet2.css">
+        <link rel="shortcut icon" type="image/x-icon" href="p3-image/favicon.ico">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+
+        <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+   crossorigin=""></script>
+       
+
+        <title>Velib</title>
+
+    </head>
+
+<body>
+    
+    <div id="page">
+
+        <header id="accueil">
+            <div id="logo"> <img src="p3-image/velib-logo.png" alt="logo velib" /> <h1> Velib'</h1></div>
+                
+                <nav id="menu">
+                    <ul>
+                        <li><a href="#page">Accueil</a></li>
+                        <li><a href="#map">Stations</a></li>
+                        <li><a href="#action">Réservation</a></li>
+                    </ul>
+                </nav>
+            <span id="bars"><i class="fas fa-bars"></i></span>
+
+        </header>
+
+        <div id="diapo">
+            <span id="gauche"><i class="fas fa-chevron-left"></i></span>
+            <div id="slider">
+                <div class="slide image1">
+                    <div class="slide-body">
+                        <h2>Bienvenue sur Velib'</h2>
+                        <p>Comment réserver un vélo ?<br>C'est très simple voici les étapes !</p>
+                    </div>
+                </div>
+                <div class="slide image2">
+                    <div class="slide-body">
+                        <h2>Etape 1</h2>
+                        <p>Choisisez une station<br>Attention les stations en noir sont fermées</p>
+                    </div>
+                </div>
+                <div class="slide image3">
+                    <div class="slide-body">
+                        <h2>Etape 2</h2>
+                        <p>Cliquez sur réserver et remplissez le formulaire puis signez</p>
+                    </div>
+                </div>
+                <div class="slide image4">
+                    <div class="slide-body">
+                        <h2>Etape 3</h2>
+                        <p>vous avez 20 minutes pour récupérer le vélo à la station que vous avez choisie</p>
+                    </div>
+                </div>
+                <div class="slide image5">
+                    <div class="slide-body">
+                        <h2>C'est fait !</h2>
+                        <p>Velib' vous souhaite une bonne balade</p>
+                    </div>
+                </div>
+            </div>
+            <span id="droite"><i class="fas fa-chevron-right"></i></span>
+            <span id="pause"><i class="fas fa-pause"></i></span>
+            <span id="play"><i class="fas fa-play"></i></span>
+        </div>
+
+        <section id="conteneur">
+
+            <div id="map"></div>
+            <div id="reservation">
+                <div id="action">
+                    <h2> Sélectionnez une station </h2>
+                </div>
+                <button id="reserver">Réserver</button>
+                <form id="formulaire" onclick = "return false">
+                    <input type="text" name="Nom" placeholder="votre nom" id="nom" />
+                    <input type="text" name="Prenom" placeholder="votre Prénom" id="prenom" />                
+                    <div id="canvas-sig">
+                        <div><canvas id="signature"></canvas></div>                    
+                        <div id="clear-submit">
+                            <button class="btn-effacer" id="effacer">Effacer</button>
+                            <button  class="btn-confirmer" id="confirmer">Confirmer</button>
+                        </div>
+                    </div>
+                </form>
+            </div> 
+
+        </section>
+        <span class="erreurcanvas"><h3 id="msg">Vous devez signer pour terminer la réservation</h3></span>
+        <span class="erreurchamps"><h3 id="msg2">Remplisser les champs pour continuer la réservation</h3></span>
+
+
+        <section id="timer">
+            <div id="info">
+                <p>Vélo réservé par <span id="nomClient"></span> <span id="prenomClient"></span> à la station <span id="station"></span> </br>Il vous reste <span id="minutes"></span> : <span id="secondes"></span> minutes pour le récupérer</p>
+                <button id="annulation">Annuler</button>
+            </div>
+            <span id="annulresa">Réservation annulée</span>
+            <span id="expireresa">Votre réservation a expirée</span>
+        </section>
+        
+         
+
+            
+    </div>
+   
+    <script src="Burgermenu.js"></script>
+    <script src="diapo.js" ></script>
+    <script src="ajax.js" ></script>
+    <script src="chrono.js"></script>
+    <script src="canvas.js"></script>
+    <script src="carte.js" ></script>
+    <script src="reservation.js" ></script>
+
+    
+
+    
+
+</body>
