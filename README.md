@@ -59,10 +59,10 @@ Enfin,  votre évaluateur reprendra pleinement son rôle de validateur pour un �
 
 ## Compétences évaluées
 
-Récupérer des données de formulaires en utilisant le langage JavaScript
+- Récupérer des données de formulaires en utilisant le langage JavaScript
 
-Faire des requêtes HTTP en langage JavaScript
+- Faire des requêtes HTTP en langage JavaScript
 
-Créer des objets simples en JavaScript, contenant des méthodes et des propriétés
+- Créer des objets simples en JavaScript, contenant des méthodes et des propriétés
 
-Ecrire un code source lisible
+- Ecrire un code source lisible
